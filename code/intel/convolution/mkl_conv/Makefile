@@ -26,7 +26,7 @@ MKLLIB=$(word 2, $(RETURN_STRING))
 tmp=$(shell echo $MKLLIB)
 
 CC       =  icc
-CFLAGS   =  -O3  -Wall -I$(MKLROOT)/include -qopenmp -std=c++11
+CFLAGS   =  -O3  -Wall -xAVX-512 -I$(MKLROOT)/include -qopenmp -std=c++11
 OBJS     =  std_conv_bench.o
 
 ifeq ($(MKLLIB), mklml_intel)
